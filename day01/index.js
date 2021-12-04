@@ -1,3 +1,4 @@
+// FIRST PART
 let path = require("path");
 let fs = require("fs");
 
@@ -15,3 +16,22 @@ nums.forEach((curr, i) => {
   }
 });
 console.log(count);
+
+// SECOND PART
+let reducedNums = [];
+nums.forEach((first, i) => {
+  if (i < nums.length - 2) {
+    let second = nums[i + 1];
+    let third = nums[i + 2];
+    reducedNums.push(first + second + third);
+  }
+});
+
+let count2 = 0;
+reducedNums.forEach((curr, i) => {
+  if (i < reducedNums.length - 1) {
+    let next = reducedNums[i + 1];
+    if (curr < next) count2++;
+  }
+});
+console.log(count2);
